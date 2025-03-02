@@ -207,4 +207,4 @@ document.getElementById('accountForm').addEventListener('submit', function(event
     }
 });
 </script>
-<?php include "./inc/footer.php"; ?>
+

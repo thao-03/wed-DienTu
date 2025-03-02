@@ -664,7 +664,7 @@ pre code {
   .container-md,
   .container-lg,
   .container-xl {
-    max-width: 1140px;
+    max-width: 1340px;
   }
 }
 
@@ -1989,7 +1989,7 @@ pre code {
   border: 1.5px solid black;
   border-radius: 30px;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  padding-left: 30px;
+  /* padding-left: 30px; */
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -4763,7 +4763,7 @@ input[type="button"].btn-block {
 .card-body {
   flex: 1 1 auto;
   min-height: 1px;
-  padding: 1.25rem;
+  padding: 1rem;
 }
 
 .card-title {
@@ -7886,7 +7886,7 @@ button.bg-dark:focus {
 
 .mt-5,
 .my-5 {
-  margin-top: 1rem !important;
+  margin-top: 0.5rem !important;
 }
 
 .mr-5,

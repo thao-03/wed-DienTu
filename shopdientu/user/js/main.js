@@ -106,16 +106,16 @@
   // Product Quantity
   $(".quantity button").on("click", function () {
     var button = $(this);
-    var oldValue = button.parent().parent().find("input").val();
+    var input = button.parent().parent().find("input");
+    var oldValue = parseInt(input.val()) || 0; // Chuyển đổi giá trị input sang số nguyên, nếu không hợp lệ thì mặc định là 0
+
+    var newVal;
     if (button.hasClass("btn-plus")) {
-      var newVal = parseFloat(oldValue) + 1;
+      newVal = oldValue + 1;
+      if (newVal > 5) newVal = 5;
     } else {
-      if (oldValue > 0) {
-        var newVal = parseFloat(oldValue) - 1;
-      } else {
-        newVal = 0;
-      }
+      newVal = oldValue > 0 ? oldValue - 1 : 0; // Giảm số lượng, không cho giá trị nhỏ hơn 0
     }
-    button.parent().parent().find("input").val(newVal);
+    input.val(newVal); // Cập nhật giá trị mới cho input
   });
 })(jQuery);

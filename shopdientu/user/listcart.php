@@ -46,9 +46,8 @@ if (isset($_SESSION['cart']))
                     </thead>
                     <tbody class="align-middle">
                     
-                    <?php foreach ($_SESSION['cart'] as $ds) { ?>
-                    	
-                 
+                    <?php $tong = 0; foreach ($_SESSION['cart'] as $ds) { ?>     
+
                         <tr>
                             <td class="align-middle"><img src='<?php echo "../admin/".$ds['hinhanh'] ?>' alt="" style="width: 50px;"> <?php echo $ds['tensp'] ?></td>
                             <td class="align-middle"><?php echo number_format($ds['dongia'],0,'.','.'); ?></td>
@@ -68,10 +67,13 @@ if (isset($_SESSION['cart']))
                                     
                                 </div>
                             </td>
-                            <td class="align-middle"><?php echo number_format($ds['dongia']*$ds['sl'],0,'.','.'); ?></td>
+                            <td class="align-middle"><?php $dongia = is_numeric($ds['dongia']) ? (float)$ds['dongia'] : 0;
+                                                           $soluong = is_numeric($ds['sl']) ? (int)$ds['sl'] : 0;
+                                                           echo number_format($dongia * $soluong, 0, '.', '.'); ?>
+                            </td>
                             <td class="align-middle"><a href="deletecart.php?id=<?php echo $ds['idsp']; ?>" class="btn btn-sm btn-primary-dele " ><i class="fa fa-times"></i></a></td>
                         </tr>
-                    <?php $tong=$tong+$ds['dongia']*$ds['sl']; } ?>
+                        <?php $tong += $dongia * $soluong; } ?>
                     <tr>
                     	<td></td>
                     	<td></td>

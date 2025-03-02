@@ -65,12 +65,12 @@ $count_dahuy = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM hoa_don WHERE 
     .fixed-sidebar {
         
         top: 50px; /* Adjust this value based on your header height */
-        width: 350px; /* Adjust width as necessary */
+        width: 150px; /* Adjust width as necessary */
+        margin-bottom: 90px;
     }
+
     .content {
-        margin-left: 350px; /* Adjust this value based on the fixed sidebar width */
-        /* margin-bottom: 80px; */
-        bottom: 150px;
+        margin-bottom: 100px;
     }
 </style>
 
